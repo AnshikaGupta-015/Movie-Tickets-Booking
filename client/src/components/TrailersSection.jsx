@@ -5,7 +5,6 @@ import ReactPlayer  from 'react-player'
 import BlurCircle from './BlurCircle'
 import { PlayCircleIcon } from 'lucide-react';
 
-
 const TrailersSection = () => {
 
 const [currentTrailer, setCurrentTrailer] = useState(dummyTrailers[0])
@@ -16,9 +15,14 @@ return (
     
     <div className='relative mt-6 '>
       <BlurCircle top='-100px' right='-100px'/>
-       <ReactPlayer url ={currentTrailer.videoUrl} controls={true}
-       playing
-       className="mx-auto max-w-full" width="960px" height="540px"/>
+       <ReactPlayer 
+        url={currentTrailer.videoUrl} 
+        controls={true}
+  playing={false}  // ← yeh karo
+        className="mx-auto max-w-full" 
+        width="960px" 
+        height="540px"
+/>
       </div>
 
       <div className='group grid grid-cols-4 gap-4 md:gap-8 mt-8 max-w-3xl mx-auto'>
